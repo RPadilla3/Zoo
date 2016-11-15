@@ -13,15 +13,12 @@
         this.name = name || 'joey';
         this.age = age || 3;
 
-    }
-
-    // Animal.prototype = Object.create(Narwhal.prototype);
-    // Animal.prototype.constructor = Animal;
+    };
 
     /**
      * Narhwal constructor function, to be applied to the animal object.
      * @param {String} name A string, the name of the Narwhal
-     * @param {Number} age  The number that is given to the Narwhal as its age. 
+     * @param {Number} age  The number that is given to the Narwhal as its age.
      */
     function Narwhal(name, age) {
 
@@ -37,6 +34,11 @@
     Narwhal.prototype.mate = function mate() {
       console.log('mating narwhals');
     };
+
+      console.log(new Narwhal('guadalupe'));
+    Animal.prototype = Object.create(Narwhal.prototype);
+    Animal.prototype.constructor = Animal;
+
 
 
 }());
