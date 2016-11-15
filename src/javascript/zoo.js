@@ -35,9 +35,13 @@
     Narwhal.prototype = Object.create(Animal.prototype);
     Narwhal.prototype.constructor = Narwhal;
 
-
     console.log(new Narwhal('guadalupe'));
 
+    /**
+     * Echidna Constructor function, to be applied to the animal object.
+     * @param {String} name A string, the name of the Echidna
+     * @param {Number} age  The number that is given to the Echidna as it's age.
+     */
     function Echidna(name, age) {
 
       Animal.apply( this, [name])
