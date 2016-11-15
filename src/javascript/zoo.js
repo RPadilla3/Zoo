@@ -28,17 +28,14 @@
 
     }
 
-    Narwhal.prototype = Object.create(Animal.prototype);
-    Narwhal.prototype.constructor = Narwhal;
-
     Narwhal.prototype.mate = function mate() {
       console.log('mating narwhals');
     };
 
-      console.log(new Narwhal('guadalupe'));
     Animal.prototype = Object.create(Narwhal.prototype);
     Animal.prototype.constructor = Animal;
 
+    console.log(new Narwhal('guadalupe'));
 
 
 }());
