@@ -11,7 +11,7 @@
      */
     function Animal(name, age) {
         this.name = name || 'joey';
-        this.age = age || 3;
+        this.age = age || 0;
 
     };
 
@@ -28,14 +28,20 @@
 
     }
 
-    Narwhal.prototype.mate = function mate() {
-      console.log('mating narwhals');
-    };
-
     Narwhal.prototype = Object.create(Animal.prototype);
     Narwhal.prototype.constructor = Narwhal;
 
+    Narwhal.prototype.birth = function birth() {
+      return new Narwhal('qaddafi');
+    }
+      // console.log(birth());
+
+
+
     console.log(new Narwhal('guadalupe'));
+    var pedro = new Narwhal('pedro', 2);
+    console.log(pedro.birth());
+
 
     /**
      * Echidna Constructor function, to be applied to the animal object.
