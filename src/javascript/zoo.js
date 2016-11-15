@@ -32,10 +32,23 @@
       console.log('mating narwhals');
     };
 
-    Animal.prototype = Object.create(Narwhal.prototype);
-    Animal.prototype.constructor = Animal;
+    Narwhal.prototype = Object.create(Animal.prototype);
+    Narwhal.prototype.constructor = Narwhal;
+
 
     console.log(new Narwhal('guadalupe'));
 
+    function Echidna(name, age) {
+
+      Animal.apply( this, [name])
+      this.breed = 'Echidna';
+      this.name = name || 'Hugh Janus';
+
+    }
+
+    Echidna.prototype = Object.create(Animal.prototype);
+    Echidna.prototype.constructor = Echidna;
+
+    console.log(new Echidna('rosario'));
 
 }());
