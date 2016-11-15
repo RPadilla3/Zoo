@@ -13,12 +13,18 @@
         this.name = name || 'joey';
         this.DOB = DOB || 3;
     }
-    console.log(new Animal('guadalupe', 10));
 
-  
+    Animal.prototype.getAge = function getAge(){
+      return 5;
 
+    };
 
+      var Narwhal = new Animal('guadalupe', 3346372934730)
 
-    // var guadalupe = new Narwhal('guadalupe', 'male', false);
-    // var maria = new Narwhal('maria', 'female', true);
+      console.log(Narwhal, Narwhal.getAge());
+
+      var Okapi = new Animal('esperanza', 56828364239462)
+
+      console.log(Okapi, Okapi.getAge());
+
 }());
