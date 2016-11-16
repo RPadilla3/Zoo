@@ -47,11 +47,10 @@
     Narwhal.prototype.joust = function joust() {
         var NarwhalTusk = Math.ceil(Math.random() * 10);
         if (NarwhalTusk > 5) {
-
+          return 'win';
         } else {
-            new Narwhal('dead')
+          return 'lose';
         }
-        console.log(NarwhalTusk);
     };
     // console.log(birth());
 
@@ -77,8 +76,8 @@
         return new Echidna('carl');
     }
 
-    Echidna.prototype.dig = function dig() {
-
+    Echidna.prototype.dig = function dig(burrow) {
+      return 'Echidna dug down into the ' + burrow;
     }
 
 
