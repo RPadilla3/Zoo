@@ -33,12 +33,23 @@
 
     });
 
-    // describe('Testing Narwhal Constructor function', function() {
-    //     it('Should create a new Narwhal when', function() {
-    //
-    //     });
-    //
-    // });
+    describe('Testing Narwhal Constructor function', function() {
+      it('Should create a new Narwhal whenever a name and age are passed', function() {
+          expect(new window.zoo.Narwhal('Jill Stein', 53)).to.be.an('object');
+      })
+      it('Should create the default animal if no input is given', function() {
+          expect(new window.zoo.Narwhal('')).to.be.an('object');
+      })
+      it('Should return a TypeError message if anythin other than a string is typed in the input', function() {
+        try {
+          new window.zoo.Narwhal(['243']);
+          expect(true).to.equal(false);
+        } catch(err) {
+          expect(err).to.be.an.instanceof(TypeError);
+        }
+      });
+
+  });
 
 
 

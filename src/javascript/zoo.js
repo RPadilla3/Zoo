@@ -29,10 +29,10 @@
      * @param {Number} age  The number that is given to the Narwhal as its age.
      */
     function Narwhal(name, age) {
-
-        Animal.apply(this, [name, age]);
-        // this.breed = 'Narwhal';
-        // this.name = name || 'Harry';
+      if (typeof(name) !== 'string') {
+          throw new TypeError('Hey! You need to give me a string!');
+      }
+      Animal.apply(this, [name, age]);
 
     }
 
@@ -46,13 +46,12 @@
 
     Narwhal.prototype.joust = function joust() {
         var NarwhalTusk = Math.ceil(Math.random() * 10);
-        if (NarwhalTusk > 5) {
+        if (NarwhalTusk > 6) {
           return 'win';
         } else {
           return 'lose';
         }
     };
-    // console.log(birth());
 
     var pedro = new Narwhal('pedro', 2);
 
