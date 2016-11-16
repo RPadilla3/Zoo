@@ -21,7 +21,7 @@
         }
         this.name = name || 'joey';
         this.age = age || 0;
-    };
+    }
 
     /**
      * Narhwal constructor function, to be applied to the animal object.
@@ -53,8 +53,6 @@
         }
     };
 
-    var pedro = new Narwhal('pedro', 2);
-
     /**
      * Echidna Constructor function, to be applied to the animal object.
      * @param {String} name A string, the name of the Echidna
@@ -73,11 +71,11 @@
 
     Echidna.prototype.birth = function birth() {
         return new Echidna('carl');
-    }
+    };
 
     Echidna.prototype.dig = function dig(burrow) {
       return 'Echidna dug down into the ' + burrow;
-    }
+    };
 
 
 }());
