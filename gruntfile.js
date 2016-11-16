@@ -15,10 +15,31 @@ module.exports = function(grunt) {
           }
         }
       },
+      connect: {
+   testig: {
+     options: {
+       port: 6969,
+       base: '.'
+     }
+   }
+ },
+
+ mocha: {
+   alltests: {
+     options: {
+       url: [
+         'https://localhost:6969/test/thoughterTester.html'
+       ]
+     }
+   }
+ },
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-mocha');
 
-    grunt.registerTask('default', ['jshint'])
+    grunt.registerTask('test', ['connect', 'mocha']);
+    grunt.registerTask('default', ['jshint', 'test']);
 };
