@@ -1,38 +1,37 @@
-
 module.exports = function(grunt) {
-  'use strict';
+    'use strict';
 
     grunt.initConfig({
 
-      jshint: {
-        options: {
-          jshintrc: '.jshintrc',
-          ignores: ['node_modules/**']
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                ignores: ['node_modules/**']
+            },
+            source: {
+                files: {
+                    src: ['src/javascript/**/*.js']
+                }
+            }
         },
-        source: {
-          files: {
-            src: ['src/javascript/**/*.js']
-          }
-        }
-      },
-      connect: {
-   testig: {
-     options: {
-       port: 6969,
-       base: '.'
-     }
-   }
- },
+        connect: {
+            testing: {
+                options: {
+                    port: 8000,
+                    base: '.'
+                }
+            }
+        },
 
- mocha: {
-   alltests: {
-     options: {
-       url: [
-         'https://localhost:6969/test/thoughterTester.html'
-       ]
-     }
-   }
- },
+        mocha: {
+            alltests: {
+                options: {
+                    urls: [
+                        'http://localhost:8000/test/zooTester.html'
+                    ]
+                }
+            }
+        },
 
     });
 
