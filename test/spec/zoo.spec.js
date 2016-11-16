@@ -10,12 +10,15 @@
     });
   });
 
-  describe('Testing Animal constructor function', function(){
+  describe('Testing Animal constructor function', function (){
     it('Should create a new animal whenever a name and age are passed', function(){
       expect(new window.zoo.Animal('poncho', 4)).to.be.an('object');
     })
     it('Should create the default animal if no input is given', function(){
-      expect(new window.zoo.Animal()).to.be.an('object');
+      expect(new window.zoo.Animal('')).to.be.an('object');
+    })
+    it('Should return undefined if an Array is put in the input', function(){
+      expect(new window.zoo.Animal(['JuanPablo'])).to.be.undefined;
     })
 
   });

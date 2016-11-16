@@ -8,13 +8,17 @@
     window.zoo.Echidna = Echidna;
 
     /**
-     * Animal contructor function that will create a new animal when given a
+     * Animal constructor function that will create a new animal when given a
      * new name and date of birth.
      * @param {String} name Whatever you want to name the animal
+     * @throws {TypeError} if the name argument is an Array.
      * @param {Number} age A number that will be given to the animal for its age
      * in years.
      */
     function Animal(name, age) {
+        if(Array.isArray(name)){
+          throw "You better get ya stuff together";
+        }
         this.name = name || 'joey';
         this.age = age || 0;
 
