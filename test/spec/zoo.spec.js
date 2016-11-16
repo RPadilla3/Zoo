@@ -17,8 +17,12 @@
     it('Should create the default animal if no input is given', function(){
       expect(new window.zoo.Animal('')).to.be.an('object');
     })
-    it('Should return undefined if an Array is put in the input', function(){
-      expect(new window.zoo.Animal(['JuanPablo'])).to.be.undefined;
+    it('Should return a TypeError message if anything other than a string is typed in the input', function(){
+      var fn = function(){
+        new window.zoo.Animal(4)
+      }
+
+      expect(fn).to.throw(Error);
     })
 
   });
