@@ -16,12 +16,11 @@
      * in years.
      */
     function Animal(name, age) {
-        if(Array.isArray(name)){
-          throw "You better get ya stuff together";
+        if(typeof(name) !== 'string') {
+          throw new TypeError('Hey! You must give me a string!');
         }
         this.name = name || 'joey';
         this.age = age || 0;
-
     };
 
     /**
@@ -46,14 +45,9 @@
     }
       // console.log(birth());
 
+      var pedro = new Narwhal('pedro', 2);
 
-
-    console.log(new Narwhal('guadalupe'));
-    var pedro = new Narwhal('pedro', 2);
-    console.log(pedro.birth());
-
-
-    /**
+      /**
      * Echidna Constructor function, to be applied to the animal object.
      * @param {String} name A string, the name of the Echidna
      * @param {Number} age  The number that is given to the Echidna as it's age.
@@ -73,6 +67,5 @@
       return new Echidna('carl');
     }
 
-    console.log(new Echidna('rosario'));
 
 }());
