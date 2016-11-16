@@ -1,6 +1,11 @@
 (function() {
     'use strict';
 
+    window.zoo = window.zoo || {};
+
+    window.zoo.Animal = Animal;
+    window.zoo.Narwhal = Narwhal;
+    window.zoo.Echidna = Echidna;
 
     /**
      * Animal contructor function that will create a new animal when given a
@@ -22,14 +27,15 @@
      */
     function Narwhal(name, age) {
 
-      Animal.apply( this, [name])
-      this.breed = 'Narwhal';
-      this.name = name || 'Harry Johnson';
+      Animal.apply( this, [name, age]);
+      // this.breed = 'Narwhal';
+      // this.name = name || 'Harry';
 
     }
 
     Narwhal.prototype = Object.create(Animal.prototype);
     Narwhal.prototype.constructor = Narwhal;
+    Narwhal.prototype.breed = 'Narwhal';
 
     Narwhal.prototype.birth = function birth() {
       return new Narwhal('qaddafi');
@@ -50,7 +56,7 @@
      */
     function Echidna(name, age) {
 
-      Animal.apply( this, [name])
+      Animal.apply( this, [name, age]);
       this.breed = 'Echidna';
       this.name = name || 'Hugh Janus';
 
@@ -58,6 +64,10 @@
 
     Echidna.prototype = Object.create(Animal.prototype);
     Echidna.prototype.constructor = Echidna;
+
+    Echidna.prototype.birth = function birth() {
+      return new Echidna('carl');
+    }
 
     console.log(new Echidna('rosario'));
 
