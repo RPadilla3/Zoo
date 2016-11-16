@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tester</title>
+</head>
+<body>
+  <main id='mocha'></main>
+
+
+
+
+  <script src='../nodemodules/mochay/mocha.js'></script>
+  <script src='../nodemodules/chai/chai.js'></script>
+  <script src='../nodemodules/jquery/dist/jquery.js'></script>
+  <script>
+  mocha.setup('bdd');
+  </script>
+  <script src='src/javascript/zoo.js'></script>
+  <script src='js/zoo.spec.js'></script>
+  <script>
+  mocha.run();
+  </script>
+  </body>
+</html>
