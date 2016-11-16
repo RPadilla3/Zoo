@@ -1,6 +1,7 @@
 (function() {
   'use strict';
   window.zoo = window.zoo || {};
+
   var expect = chai.expect;
 
   describe('Testing namespace of Zoo', function (){
