@@ -18,13 +18,26 @@
       expect(new window.zoo.Animal('')).to.be.an('object');
     })
     it('Should return a TypeError message if anything other than a string is typed in the input', function(){
-      var fn = function(){
-        new window.zoo.Animal(4)
+      // var fn = function(){
+      //   new window.zoo.Animal(4);
+      // }
+      //   // expect(fn).to.throw(Error);
+      try {
+        new window.zoo.Animal(420);
+        expect(true).to.equal(false);
+      } catch(err){
+        console.log(err);
+        expect(err).to.be.an.instanceof(TypeError);
       }
 
-      expect(fn).to.throw(Error);
-    })
+    });
 
   });
+
+  describe('Testing Narwhal Constructor function', function(){
+    it('Should create a new Narwhal when ')
+  });
+
+
 
 }());
