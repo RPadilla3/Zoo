@@ -16,8 +16,8 @@
      * in years.
      */
     function Animal(name, age) {
-        if(typeof(name) !== 'string') {
-          throw new TypeError('Hey! You must give me a string!');
+        if (typeof(name) !== 'string') {
+            throw new TypeError('Hey! You must give me a string!');
         }
         this.name = name || 'joey';
         this.age = age || 0;
@@ -30,9 +30,9 @@
      */
     function Narwhal(name, age) {
 
-      Animal.apply( this, [name, age]);
-      // this.breed = 'Narwhal';
-      // this.name = name || 'Harry';
+        Animal.apply(this, [name, age]);
+        // this.breed = 'Narwhal';
+        // this.name = name || 'Harry';
 
     }
 
@@ -41,22 +41,32 @@
     Narwhal.prototype.breed = 'Narwhal';
 
     Narwhal.prototype.birth = function birth() {
-      return new Narwhal('qaddafi');
-    }
-      // console.log(birth());
+        return new Narwhal('gaddafi');
+    };
 
-      var pedro = new Narwhal('pedro', 2);
+    Narwhal.prototype.joust = function joust() {
+        var NarwhalTusk = Math.ceil(Math.random() * 10);
+        if (NarwhalTusk > 5) {
 
-      /**
+        } else {
+            new Narwhal('dead')
+        }
+        console.log(NarwhalTusk);
+    };
+    // console.log(birth());
+
+    var pedro = new Narwhal('pedro', 2);
+
+    /**
      * Echidna Constructor function, to be applied to the animal object.
      * @param {String} name A string, the name of the Echidna
      * @param {Number} age  The number that is given to the Echidna as it's age.
      */
     function Echidna(name, age) {
 
-      Animal.apply( this, [name, age]);
-      this.breed = 'Echidna';
-      this.name = name || 'Hugh Janus';
+        Animal.apply(this, [name, age]);
+        this.breed = 'Echidna';
+        this.name = name || 'Hugh';
 
     }
 
@@ -64,7 +74,11 @@
     Echidna.prototype.constructor = Echidna;
 
     Echidna.prototype.birth = function birth() {
-      return new Echidna('carl');
+        return new Echidna('carl');
+    }
+
+    Echidna.prototype.dig = function dig() {
+
     }
 
 
